@@ -1,0 +1,18 @@
+import base64
+
+def base64_to_plain_text(base64_string):
+    try:
+        # Decode the base64 string into bytes
+        decoded_bytes = base64.b64decode(base64_string)
+        # Convert bytes to string using UTF-8 encoding
+        plain_text = decoded_bytes.decode('utf-8')
+        return plain_text
+    except Exception as e:
+        print("Error:", e)
+        return None
+
+# Example usage
+base64_string = "QWRtaW5BZG1pbkAxMjM="
+plain_text = base64_to_plain_text(base64_string)
+if plain_text:
+    print("Plain text:", plain_text)
